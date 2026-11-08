@@ -1460,8 +1460,8 @@ section[id] { scroll-margin-top: 110px; }
     letter-spacing: .16em;
     opacity: .85;
 }
-.project-art-title { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.2; }
-.project-art-caption { font-size: .83rem; max-width: 75%; }
+.project-art-title { color: #ffffff;font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.2; }
+.project-art-caption { color: #ffffff; font-size: .83rem; max-width: 75%; }
 .project-logo {
     position: absolute;
     top: 20px;
@@ -1472,7 +1472,7 @@ section[id] { scroll-margin-top: 110px; }
     padding: 8px;
     object-fit: contain;
     background: #fff;
-    border-radius: 50%;
+    border-radius: 100%;
     box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
 }
 .art-orbit { position: absolute; z-index: -1; right: -60px; top: -40px; width: 260px; height: 260px; border: 1px solid #ffffff35; border-radius: 50%; box-shadow: 0 0 0 30px #ffffff08, 0 0 0 60px #ffffff08; }
