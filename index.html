@@ -1,260 +1,768 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Megan Daoust</title>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Megan Daoust | Software Developer</title>
+        <meta name="description" content="Megan Daoust is a software developer and computer science student at UQO, building full-stack web applications, cloud infrastructure, and iOS experiences.">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+        <!-- External Styles -->
+        <link rel="stylesheet" href="default.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <!-- External Styles -->
-    <link rel="stylesheet" type="text/css" href="default.css">
-    <link id="theme-style" rel="stylesheet" type="text/css" href="">
-    
-    <style>
-        /* Post Wrapper for Projects */
-        .post-wrapper {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            gap: 70px; /* Space between posts */
-            margin: 0 auto;
-            max-width: 100%; /* Center content and limit width */
-        }
+        <!-- Ambient Visual Glow & Grid Mesh -->
+        <div class="bg-ambient-blob blob-1"></div>
+        <div class="bg-ambient-blob blob-2"></div>
+        <div class="bg-grid-pattern"></div>
 
-        .post {
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 5px;
-            background: #f9f9f9;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Ensures even spacing */
-            align-items: center; /* Centers content horizontally */
-            width: 100%; /* Ensures uniform width */
-            height: 560px; /* Fixed height for uniform size */
-        }
+        <!-- Sticky Glassmorphic Navbar -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <a href="#hero" class="logo-wrapper">
+                    <div class="logo-avatar">MD</div>
+                    <div>
+                        <span class="logo-text">Megan Daoust</span>
+                    </div>
+                    <span class="logo-badge">B.Sc. CS '26</span>
+                </a>
 
-        .post img.thumbnail {
-            width: 100%; /* Scale to fit width */
-            height: 280px; /* Fixed height for images */
-            object-fit: contain; /* Ensure the image fits without distortion */
-            border-radius: 5px;
-        }
+                <!-- Desktop Navigation Links -->
+                <ul class="nav-links" id="primary-navigation" aria-label="Main navigation">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
 
-        .post-preview {
-            text-align: center;
-            margin-top: 10px;
-            overflow: hidden; /* Prevent content from overflowing */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            height: 100%; /* Ensure content fills the available space */
-        }
+                <!-- Header Actions -->
+                <div class="nav-actions">
+                    <!-- Dark / Light Theme Toggle -->
+                    <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Light and Dark Mode">
+                        <span id="theme-icon">
+                            <!-- Sun Icon (Default in Dark Mode) -->
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </span>
+                    </button>
 
-        .post-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 1.5rem; /* Increased font size for titles */
-        }
-
-        .post-intro {
-            font-size: 1.1rem; /* Increased font size for text */
-            line-height: 1.6; /* Improved line spacing */
-        }
-
-        .skills-section h4 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .skill-type {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .skill-type h3 {
-            text-align: center;
-            color: rgb(132, 205, 229);
-            text-decoration: underline;
-        }
-
-        .skill-type ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        .skill-type li {
-            margin-bottom: 5px;
-        }
-    </style>
-</head>
-<body>
-    <section class="s1">
-        <div class="main-container">
-            <div class="greeting-wrapper">
-                <h1>Hi, I'm Megan Daoust</h1>
-            </div>
-
-            <div class="intro-wrapper">
-                <div class="nav-wrapper">
-                    <a href="index.html">
-                        <div class="dots-wrapper">
-                            <div id="dot-1" class="browser-dot"></div>
-                            <div id="dot-2" class="browser-dot"></div>
-                            <div id="dot-3" class="browser-dot"></div>
-                        </div>
+                    <!-- Resume Quick CTA -->
+                    <a href="Megan_Daoust.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" download>
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Resume
                     </a>
-                </div>
 
-                <div class="left-column">
-                    <img id="profile_pic" src="images/me.jpg">
-                    <h5 style="text-align: center; line-height: 0;">Personalize Theme</h5>
-
-                    <div id="theme-options-wrapper">
-                        <div data-mode="light" id="light-mode" class="theme-dot"></div>
-                        <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
-                        <div data-mode="green" id="green-mode" class="theme-dot"></div>
-                        <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
-                    </div>
-                </div>
-
-                <div class="right-column">
-                    <div id="preview-shadow">
-                        <div id="preview">
-                            <div id="corner-tl" class="corner"></div>
-                            <div id="corner-tr" class="corner"></div>
-                            <h3>Who Am I?</h3>
-                            <p>I am a 3rd year Computer Science student at the University of Quebec in Outaouais and a data analyst Intern @ ESDC.</p>
-                            <div id="corner-br" class="corner"></div>
-                            <div id="corner-bl" class="corner"></div>
-                        </div>
-                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button class="mobile-nav-toggle" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
+                        <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section class="s2">
-        <div class="main-container skills-section" style="margin-bottom: 50px;">
-            <h4>More about me</h4>
-            <p>I am a highly motivated and dedicated computer science student seeking a co-op opportunity. With a strong academic background in coding and hands-on experience in developing tests and utilizing various programming languages, frameworks, and DevOps tools.</p>
-            <p>I am eager to contribute my skills and passion to a dynamic team. I thrive in fast-paced environments, excel at problem-solving, and possess strong communication and collaboration abilities. I am excited to apply my knowledge and contribute to innovative projects that make a meaningful impact.</p>
-            <hr>
-            <h4>TOP EXPERTISE</h4>
-            <p>A motivated Computer Science student with practical experience in data analysis and software development, eager to apply technical skills to solve complex problems and contribute to impactful projects: <a target="_blank" href="Resume - Megan_Daoust.pdf">Download Resume</a></p>
+        <main id="main-content">
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section">
+                <div class="container">
+                    <div class="hero-grid">
+                        <!-- Left Column: Bio & Value Prop -->
+                        <div class="hero-content">
+                            <div class="status-pill">
+                                <span class="status-indicator"></span>
+                                <span>Software Developer Intern @ Public Safety Canada</span>
+                            </div>
 
-            <div id="skills">
-                <div class="skill-type">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>Bash</li>
-						<li>Javascript</li>
-						<li>SQL</li>
-						<li>HTML</li>
-						<li>CSS</li>
-                    </ul>
+                            <h1 class="hero-title">
+                                Hi, I'm <span class="gradient-text">Megan Daoust</span>
+                            </h1>
+
+                            <div class="hero-subtitle">
+                                &gt; Software Developer
+                            </div>
+
+                            <p class="hero-description">
+                                I build software that makes everyday work simpler. I’m a computer science student at Université du Québec en Outaouais and a software developer intern at Public Safety Canada, with experience across full-stack web development, cloud infrastructure, and iOS.
+                            </p>
+
+                            <!-- Action Buttons -->
+                            <div class="hero-cta-group">
+                                <a href="#projects" class="btn btn-primary">
+                                    Explore My Work
+                                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </a>
+                                <a href="#contact" class="btn btn-secondary">
+                                    Get In Touch
+                                </a>
+                                <a href="Megan_Daoust.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                                    View CV (PDF)
+                                </a>
+                            </div>
+
+                            <!-- Social Links & Quick Connect -->
+                            <div class="social-pills-row">
+                                <a href="https://github.com/Megandst" target="_blank" rel="noopener noreferrer" class="social-pill" title="GitHub Profile">
+                                    <svg fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                                <a href="https://linkedin.com/in/megandaoust" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn Profile">
+                                    <svg fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z"></path>
+                                    </svg>
+                                    LinkedIn
+                                </a>
+                                <button class="social-pill copy-email-trigger" data-email="megandaoust9@gmail.com" title="Click to copy email">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <span class="btn-label">megandaoust9@gmail.com</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Interactive Profile Bento Card -->
+                        <div class="hero-visual-col">
+                            <div class="profile-card-wrapper">
+                                <div class="profile-card-backdrop"></div>
+                                <div class="profile-card">
+                                    <!-- macOS Window Control Bar -->
+                                    <div class="profile-window-bar">
+                                        <div class="window-dots">
+                                            <div class="w-dot w-red"></div>
+                                            <div class="w-dot w-yellow"></div>
+                                            <div class="w-dot w-green"></div>
+                                        </div>
+                                        <span class="window-tag">megan.dev</span>
+                                    </div>
+
+                                    <div class="profile-image-container">
+                                        <img src="images/me.jpg" alt="Megan Daoust" class="profile-img">
+                                    </div>
+
+                                    <div class="profile-meta">
+                                        <div class="profile-name">Megan Daoust</div>
+                                        <div class="profile-subtitle">Software Developer</div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Badges -->
+                                <div class="floating-chip chip-1">
+                                    <span>🎓</span>
+                                    <span>9.3 GPA • UQO</span>
+                                </div>
+                                <div class="floating-chip chip-2">
+                                    <span>💻</span>
+                                    <span>Developer @ Public Safety Canada</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-type">
-                    <h3>Frameworks</h3>
-                    <ul>
-                        <li>Rest</li>
-                        <li>React.js</li>
-                        <li>Node.js</li>
-                        <li>Spring Boot</li>
-                        <li>Junit</li>
-						<li>Java Swing</li>
-						<li>Pandas</li>
-                    </ul>
+            </section>
+
+            <!-- Bento Grid: About & Highlights -->
+            <section id="about" class="about-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">// Background &amp; Focus</span>
+                        <h2 class="section-title">A little about me</h2>
+                        <p class="section-description">
+                            From public-sector tools to a live healthcare platform, I enjoy taking an idea through design, development, and deployment.
+                        </p>
+                    </div>
+
+                    <div class="bento-grid">
+                        <!-- Bento 1: Main Story (Span 8) -->
+                        <div class="bento-card bento-span-8">
+                            <div class="card-shine"></div>
+                            <div class="bento-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bento-title">From an idea to something useful</h3>
+                            <p class="bento-desc">
+                                My work spans React and Django applications, AWS infrastructure, browser extensions, and SwiftUI. I’ve built a bilingual clinical booking platform, developed tools for federal teams, and explored embedded systems and AI-assisted wardrobe recommendations. I like understanding the whole system and the people who use it.
+                            </p>
+                            <div class="pill-cluster">
+                                <span class="pill-item">Full-Stack Development</span>
+                                <span class="pill-item">Cloud Infrastructure</span>
+                                <span class="pill-item">iOS &amp; SwiftUI</span>
+                                <span class="pill-item">Secure Data Access</span>
+                            </div>
+                        </div>
+
+                        <!-- Bento 2: Academic & Leadership Stats (Span 4) -->
+                        <div class="bento-card bento-span-4">
+                            <div class="card-shine"></div>
+                            <div class="stat-number">9.3</div>
+                            <div class="stat-label">GPA · B.Sc. Computer Science, UQO<br><span class="education-dates">Jan 2023 — Dec 2026 (expected)</span></div>
+                            <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: 20px 0;">
+                            <h4 style="font-size: 1.05rem; margin-bottom: 8px; color: var(--text-primary);">Education &amp; Community</h4>
+                            <p class="bento-desc" style="font-size: 0.88rem;">
+                                2026 Excellence Scholarship recipient. Student Representative on the Computer Science Department Council. Quebec Hackfest participant in 2024 and 2025.
+                            </p>
+                        </div>
+
+                        <!-- Bento 3: Core Philosophy (Span 4) -->
+                        <div class="bento-card bento-span-4">
+                            <div class="card-shine"></div>
+                            <div class="bento-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bento-title">Security in practice</h3>
+                            <p class="bento-desc">
+                                Hands-on experience with AWS Cognito, role-based access control, RDS IAM authentication, and Supabase Row-Level Security.
+                            </p>
+                        </div>
+
+                        <!-- Bento 4: DevOps & Cloud (Span 4) -->
+                        <div class="bento-card bento-span-4">
+                            <div class="card-shine"></div>
+                            <div class="bento-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bento-title">Cloud &amp; Automation</h3>
+                            <p class="bento-desc">
+                                Deploying applications with AWS EC2 and RDS, Nginx reverse proxies, Docker, GitHub Actions, and Azure DevOps.
+                            </p>
+                        </div>
+
+                        <!-- Bento 5: Bilingual & Communication (Span 4) -->
+                        <div class="bento-card bento-span-4">
+                            <div class="card-shine"></div>
+                            <div class="bento-icon">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+                                </svg>
+                            </div>
+                            <h3 class="bento-title">Bilingual Communication</h3>
+                            <p class="bento-desc">
+                                Building bilingual experiences, including a production clinical booking platform and a fully localized iOS application.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-type">
-                    <h3>DevOps</h3>
-                    <ul>
-                        <li>Kubernetes</li>
-                        <li>Docker</li>
-                        <li>Jenkins</li>
-                    </ul>
+            </section>
+
+            <!-- Experience Timeline Section -->
+            <section id="experience" class="experience-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">// Career Track</span>
+                        <h2 class="section-title">Professional Experience</h2>
+                        <p class="section-description">
+                            Building applications, automating workflows, and supporting teams across the Canadian public service and UQO.
+                        </p>
+                    </div>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-line"></div>
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-header">
+                                    <div>
+                                        <h3 class="timeline-role">Software Developer Intern</h3>
+                                        <div class="timeline-company">Public Safety Canada · Ottawa, ON</div>
+                                    </div>
+                                    <span class="timeline-date">May 2026 — Present</span>
+                                </div>
+                                <ul class="timeline-bullets">
+                                    <li>Develop Chrome extensions that integrate APIs to help multidisciplinary teams work more efficiently.</li>
+                                    <li>Engineered a secure internal web application from architecture to deployment, with a responsive frontend and scalable backend API.</li>
+                                    <li>Configured cloud compute, managed relational databases, and a reverse proxy for production application hosting.</li>
+                                    <li>Integrated VoIP solutions and configured open-source PBX platforms to modernize internal communications.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-header">
+                                    <div>
+                                        <h3 class="timeline-role">Software Developer Intern</h3>
+                                        <div class="timeline-company">Public Service Commission of Canada · Ottawa, ON</div>
+                                    </div>
+                                    <span class="timeline-date">Jan — May 2026 · Apr — Aug 2025</span>
+                                </div>
+                                <ul class="timeline-bullets">
+                                    <li>Contributed to the development and maintenance of React and Django web applications, applying coding best practices.</li>
+                                    <li>Wrote advanced SQL queries in Microsoft SQL Server Management Studio to retrieve and manipulate relational data.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-header">
+                                    <div>
+                                        <h3 class="timeline-role">Software Developer &amp; Data Analyst Intern</h3>
+                                        <div class="timeline-company">Employment and Social Development Canada · Ottawa, ON</div>
+                                    </div>
+                                    <span class="timeline-date">2025</span>
+                                </div>
+                                <ul class="timeline-bullets">
+                                    <li>Software Developer Intern: September — December 2025.</li>
+                                    <li>Full-Time Data Analyst Intern: January — April 2025.</li>
+                                    <li>Automated data processing workflows with Python and scripting tools to reduce manual effort.</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card">
+                                <div class="timeline-header">
+                                    <div>
+                                        <h3 class="timeline-role">Teaching Assistant · Intro to Cybersecurity</h3>
+                                        <div class="timeline-company">Université du Québec en Outaouais · Gatineau, QC</div>
+                                    </div>
+                                    <span class="timeline-date">Sep — Dec 2025</span>
+                                </div>
+                                <ul class="timeline-bullets">
+                                    <li>Teaching assistant for the Introduction to Cybersecurity course.</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                <div class="skill-type">
-                    <h3>Database</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>PostgreSQL</li>
-                    </ul>
+            </section>
+
+            <!-- Featured Projects Section -->
+            <section id="projects" class="projects-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">// Portfolio Showcase</span>
+                        <h2 class="section-title">Featured Projects</h2>
+                        <p class="section-description">
+                            A selection of recent work in healthcare, iOS, embedded systems, and full-stack development.
+                        </p>
+                    </div>
+
+                    <div class="projects-filter-bar" role="group" aria-label="Filter projects">
+                        <button class="filter-btn active" data-filter="all" aria-pressed="true">All projects</button>
+                        <button class="filter-btn" data-filter="web" aria-pressed="false">Web applications</button>
+                        <button class="filter-btn" data-filter="mobile" aria-pressed="false">iOS &amp; AI</button>
+                        <button class="filter-btn" data-filter="systems" aria-pressed="false">Embedded systems</button>
+                        <button class="filter-btn" data-filter="cloud" aria-pressed="false">Cloud &amp; deployment</button>
+                    </div>
+                    <div class="projects-grid">
+                        <article class="project-card" data-category="web cloud">
+                            <div class="project-art art-equilibre" aria-hidden="true">
+                                <span class="project-number">01 / SELECTED WORK</span>
+                                <span class="project-art-title">Cabinet Équilibre</span>
+                                <span class="project-art-caption">Bilingual healthcare booking</span>
+                                <div class="art-orbit"></div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-date">Aug — Oct 2026</p>
+                                <div class="project-tag-row">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Stripe</span>
+                                </div>
+                                <h3 class="project-title">Cabinet Équilibre</h3>
+                                <p class="project-desc">Built and deployed a bilingual clinical management and appointment booking platform serving practitioners and clients in production.</p>
+                                <p class="project-desc">Secured database access with auto-refreshing RDS IAM tokens and SSL. Integrated AWS Cognito and role-based access for admin scheduling and therapist dashboards.</p>
+                                <div class="project-footer">
+                                    <a class="project-link" href="https://www.cabinetequilibre.ca/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true">↗</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="mobile">
+                            <div class="project-art art-vestiaire" aria-hidden="true">
+                                <span class="project-number">02 / SELECTED WORK</span>
+                                <span class="project-art-title">VestiAIre</span>
+                                <span class="project-art-caption">Your wardrobe, thoughtfully connected</span>
+                                <div class="art-orbit"></div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-date">Sep 2026 — Present</p>
+                                <div class="project-tag-row">
+                                    <span class="tech-tag">Swift</span>
+                                    <span class="tech-tag">SwiftUI</span>
+                                    <span class="tech-tag">MVVM</span>
+                                    <span class="tech-tag">Supabase</span>
+                                    <span class="tech-tag">Generative AI</span>
+                                </div>
+                                <h3 class="project-title">VestiAIre</h3>
+                                <p class="project-desc">Developing a fully localized iOS wardrobe app that combines available clothing and local weather with generative AI to suggest personalized outfits.</p>
+                                <p class="project-desc">Built a Supabase/PostgreSQL backend with authentication, asynchronous CRUD operations, validation, and Row-Level Security for each user’s wardrobe.</p>
+                                <div class="project-footer">
+                                    <span class="project-note">iOS application · In development</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="systems">
+                            <div class="project-art art-air" aria-hidden="true">
+                                <span class="project-number">03 / SELECTED WORK</span>
+                                <span class="project-art-title">CO₂ Air Quality Monitor</span>
+                                <span class="project-art-caption">From sensor to signal</span>
+                                <div class="art-orbit"></div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-date">Nov — Dec 2025</p>
+                                <div class="project-tag-row">
+                                    <span class="tech-tag">C</span>
+                                    <span class="tech-tag">ARM Cortex-M0+</span>
+                                    <span class="tech-tag">FRDM-KL28Z</span>
+                                    <span class="tech-tag">SEN0159</span>
+                                </div>
+                                <h3 class="project-title">CO₂ Air Quality Monitor</h3>
+                                <p class="project-desc">Designed and validated an embedded system that measures indoor CO₂ in real time using an electrochemical sensor and the FRDM-KL28Z board.</p>
+                                <p class="project-desc">Implemented a 12-bit ADC driver with hardware calibration and 32-sample averaging to reduce noise. Organized the system into application, driver, and hardware layers.</p>
+                                <div class="project-footer">
+                                    <span class="project-note">Embedded systems · Academic project</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="project-card" data-category="web cloud">
+                            <div class="project-art art-reads" aria-hidden="true">
+                                <span class="project-number">04 / SELECTED WORK</span>
+                                <span class="project-art-title">Better Reads</span>
+                                <span class="project-art-caption">A full-stack MVP, delivered in sprints</span>
+                                <div class="art-orbit"></div>
+                            </div>
+                            <div class="project-content">
+                                <p class="project-date">Oct — Dec 2025</p>
+                                <div class="project-tag-row">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Django</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                    <span class="tech-tag">Docker</span>
+                                </div>
+                                <h3 class="project-title">Better Reads</h3>
+                                <p class="project-desc">Designed a React and TypeScript frontend with a Django backend and PostgreSQL database, packaged with Docker and Docker Compose.</p>
+                                <p class="project-desc">Delivered an MVP across three Scrum sprints. Reviewed JWT authentication and caching risks, and proposed React Query and database indexing improvements.</p>
+                                <div class="project-footer">
+                                    <span class="project-note">Full-stack development · Academic project</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
-                <div class="skill-type">
-                    <h3>Other</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>Linux</li>
-                        <li>Data Structures</li>
-                        <li>Algorithms</li>
-						<li>Azure DevOps</li>
-                        <li>English</li>
-                        <li>French</li>
-                    </ul>
+            </section>
+
+            <!-- Technical Skills Section -->
+            <section id="skills" class="skills-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">// My toolkit</span>
+                        <h2 class="section-title">Skills &amp; Technologies</h2>
+                        <p class="section-description">
+                            The languages, frameworks, and tools I use across my work and projects.
+                        </p>
+                    </div>
+
+                    <div class="skills-container-grid">
+                        <!-- Languages -->
+                        <div class="skills-category-card">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="category-name">Programming Languages</h3>
+                            </div>
+                            <div class="skill-badges">
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>JavaScript</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>TypeScript</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Swift</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Python</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Java</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Bash</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>C/C++</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>SQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Frameworks & Libraries -->
+                        <div class="skills-category-card">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="category-name">Web &amp; Mobile</h3>
+                            </div>
+                            <div class="skill-badges">
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>React.js</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Node.js</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Django</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Flask</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>HTML/CSS</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>SwiftUI</span>
+                            </div>
+                        </div>
+
+                        <!-- Cloud & DevOps -->
+                        <div class="skills-category-card">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="category-name">Cloud &amp; Infrastructure</h3>
+                            </div>
+                            <div class="skill-badges">
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>AWS EC2</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>AWS RDS</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Nginx</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Docker</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>GitHub Actions</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Azure DevOps</span>
+                            </div>
+                        </div>
+
+                        <!-- Databases -->
+                        <div class="skills-category-card">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="category-name">Databases &amp; Security</h3>
+                            </div>
+                            <div class="skill-badges">
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>PostgreSQL</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Supabase</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>AWS Cognito</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>RDS IAM</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Role-Based Access Control</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Row-Level Security</span>
+                            </div>
+                        </div>
+
+                        <!-- Software Fundamentals -->
+                        <div class="skills-category-card">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="category-name">Networking &amp; VoIP</h3>
+                            </div>
+                            <div class="skill-badges">
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>TCP/IP</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>OSI Model</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>IP Tables</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Subnetting</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Static &amp; Dynamic Routing</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>OSPF / RIP</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>VoIP</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Asterisk</span>
+                            </div>
+                        </div>
+
+                        <!-- Professional Tools & Languages -->
+                        <div class="skills-category-card">
+                            <div class="category-header">
+                                <div class="category-icon">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="category-name">Development Tools</h3>
+                            </div>
+                            <div class="skill-badges">
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Git</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>GitLab</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Jira</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Postman</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Cisco Packet Tracer</span>
+                                <span class="skill-badge">
+                                    <span class="skill-dot">
+                                    </span>Wireshark</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section">
+                <div class="container">
+                    <div class="contact-cta-wrapper">
+                        <span class="section-tag">// Get In Touch</span>
+                        <h2 class="contact-headline">Let’s build something useful.</h2>
+                        <p class="contact-subtext">
+                            I’m completing my computer science degree in December 2026. Interested in my work or a software development opportunity? I’d love to hear from you.
+                        </p>
+
+                        <div class="contact-action-box">
+                            <button class="copy-email-btn copy-email-trigger" data-email="megandaoust9@gmail.com">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="btn-label">Copy Email Address</span>
+                            </button>
+                            <a href="mailto:megandaoust9@gmail.com" class="btn btn-primary">
+                                Send Email
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="contact-cards-row">
+                            <a href="https://linkedin.com/in/megandaoust" target="_blank" rel="noopener noreferrer" class="contact-social-card">
+                                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z"></path>
+                                </svg>
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/Megandst" target="_blank" rel="noopener noreferrer" class="contact-social-card">
+                                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                    </path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <div class="contact-social-card" style="cursor: default;">
+                                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Gatineau / Ottawa, Canada
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div class="footer-copy">
+                    &copy; 2026 Megan Daoust. Built with care &amp; clean code.
+                </div>
+                <button id="back-to-top" class="footer-back-to-top" aria-label="Back to Top">
+                    Back to top
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <section class="s2">
-        <div class="main-container">
-            <h3 style="text-align: center;">Some of my projects</h3>
-            <div class="post-wrapper">
-                <div>
-                    <div class="post">
-                        <img class="thumbnail" src="images/public transportation.png" alt="Event-Driven Programming Application">
-                        <div class="post-preview">
-                            <h6 class="post-title"> Event-Driven Programming Application, Optimization of a Public Transport 
-								System</h6>
-                            <p class="post-intro">Developed an event-driven Java application to optimize a public transport system, featuring Dijkstra's algorithm for route optimization, a robust GUI with interactive components, and extensive testing with JUnit to ensure seamless functionality and a user-friendly experience.</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="post">
-                        <img class="thumbnail" src="images/microservice.jpg" alt="Microservice-Based Request System">
-                        <div class="post-preview">
-                            <h6 class="post-title">Microservice-Based Request and Expense Management System</h6>
-                            <p class="post-intro">Designed and implemented a microservice-based request and expense management system, ensuring traceability of requirements, seamless integration with existing systems, rigorous testing, and performance monitoring for efficient and reliable operations.</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="post">
-                        <img class="thumbnail" src="images/wine.jpg" alt="Canadian Wine Sales Database Project">
-                        <div class="post-preview">
-                            <h6 class="post-title">Canadian Wine Sales Database Project</h6>
-                            <p class="post-intro">Developed and managed a comprehensive database for a Canadian wine sales management system, featuring automated procedures for sales and price updates, data integrity enforcement, and advanced SQL queries to generate insightful reports on sales, producers, and customers.</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="post">
-                        <img class="thumbnail" src="images/kubernetes.png" alt="Containerized Web Application">
-                        <div class="post-preview">
-                            <h6 class="post-title">Containerized Web Application with CI/CD Pipeline and Kubernetes Orchestration</h6>
-                            <p class="post-intro">Developed a containerized RESTful web application with Python and Bash, incorporating a CI/CD pipeline using Jenkins/GitHub Actions for automated testing and deployment, and orchestrated the application on a Kubernetes cluster with LoadBalancer services for seamless external access.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Toast Notice Container -->
+        <div id="toast-notice" class="toast-notice" role="status" aria-live="polite">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="toast-msg">Copied to clipboard!</span>
         </div>
-    </section>
 
-    <section class="s2">
-        <div class="main-container">
-            <h3 style="text-align: center;">Socials</h3>
-            <h3 style="text-align: center;">Find me on <a href="https://www.linkedin.com/in/megandaoust/">LinkedIn</a> and <a href="https://github.com/Megandst">Github</a></h3>
-        </div>
-    </section>
-
-    <script type="text/javascript" src="script.js"></script>
-</body>
+        <!-- Scripts -->
+        <script src="script.js"></script>
+    </body>
 </html>
