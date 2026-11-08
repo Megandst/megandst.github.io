@@ -1437,19 +1437,12 @@ section[id] { scroll-margin-top: 110px; }
 .hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); }
 .education-dates { display: inline-block; margin-top: 8px; font-size: .78rem; color: var(--text-secondary); }
 .stat-number { color: var(--text-accent); }
-.project-art { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 32px; min-height: 220px; overflow: hidden; isolation: isolate; color: #fff; border-bottom: 1px solid var(--border-subtle); }
-.project-number { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .16em; opacity: .85; }
-.project-art-title { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.2; }
-.project-art-caption { font-size: .83rem; max-width: 75%; }
+.project-art { display: flex; align-items: center; justify-content: center; padding: 24px; min-height: 224px; border-bottom: 1px solid var(--border-subtle); }
+.project-logo { display: block; width: 240px; max-width: 100%; height: 176px; padding: 12px; object-fit: contain; background: #fff; border-radius: var(--radius-sm); }
 .art-equilibre { background: linear-gradient(120deg, #20104b, var(--indigo-bloom)); }
 .art-vestiaire { background: linear-gradient(120deg, #321248, #9a1158); }
 .art-air { background: linear-gradient(120deg, #091e46, #16466b); }
 .art-reads { background: linear-gradient(120deg, var(--vivid-royal), #243b9e); }
-.art-orbit { position: absolute; z-index: -1; right: -60px; top: -40px; width: 260px; height: 260px; border: 1px solid #ffffff35; border-radius: 50%; box-shadow: 0 0 0 30px #ffffff08, 0 0 0 60px #ffffff08; }
-.art-equilibre .art-orbit { border-color: var(--sky-aqua); }
-.art-vestiaire .art-orbit { border-radius: 28%; transform: rotate(30deg); border-color: var(--neon-pink); }
-.art-air .art-orbit { border-color: var(--sky-aqua); transform: scale(.8); }
-.art-reads .art-orbit { border-radius: 10px; transform: rotate(-20deg); }
 .project-date { font-family: var(--font-mono); color: var(--text-secondary); font-size: .75rem; margin-bottom: 16px; }
 .project-note { color: var(--text-secondary); font-size: .8rem; }
 .project-content { flex: 1; }
